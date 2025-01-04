@@ -22,3 +22,11 @@ def add_kategori(request):
         data.save()
         return redirect('kategori')
     return render(request ,'form_kategori.html')
+def edit_kategori(request,k_id):
+    data = Kategori.objects.get(id = k_id)
+    if request.method == 'POST':
+        data.nama_kategori = request.POST['nama']
+        data.save()
+        return redirect('kategori')
+    context = {'data':data}
+    return render(request ,'edit_kategori.html', context)

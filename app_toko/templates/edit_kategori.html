@@ -1,0 +1,17 @@
+
+{% extends "index.html" %}
+
+{% block content %}
+<h1 class="mx-5 mt-3">Edit Kategori</h1>
+<a class="btn btn-primary mt-2 mx-5" href="{% url 'kategori' %}">Kembali</a>
+
+<form action="{% url 'edit_kategori' k_id=data.id %}" method='post'>
+    {% csrf_token %}
+    <div class="mx-5 mb-3 mt-3">
+        <input type='hidden' name="id" value="{{ data.id }}"> 
+        <label for="nama" class="form-label">Nama Kategori</label>
+        <input type="text" class="form-control" value="{{ data.nama_kategori }}" id="nama" placeholder="Masukkan nama kategori" name="nama">
+    </div>
+    <button type="submit" class="mx-5 btn btn-primary">Simpan</button>
+</form>
+{% endblock %}

@@ -20,7 +20,7 @@
         <td>{{kategori.id}}</td>
         <td>{{kategori.nama_kategori}}</td>
         <td>
-          <a href="" class="btn btn-warning">Update</a>
+          <a href="{% url "edit_kategori" k_id=kategori.id %}" class="btn btn-warning">Update</a>
           <a href=" {% url "del_kategori" kategori.id %} " class="btn btn-danger">Delete</a>
         </td>
       
