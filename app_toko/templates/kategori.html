@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+
+{%block content%}
+<div class="container">
+    <h2>Tambah Data kategori</h2>
+    <p>Form kategori</p>      
+    <a href=" {% url "add_kategori" %} " class="btn btn-success">Tambah</a>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>kategori id</th>
+          <th>nama kategori</th>
+          <th>aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for kategori in lst_kategori %}
+      <tr>
+        <td>{{kategori.id}}</td>
+        <td>{{kategori.nama_kategori}}</td>
+        <td>
+          <a href="" class="btn btn-warning">Update</a>
+          <a href=" {% url "del_kategori" kategori.id %} " class="btn btn-danger">Delete</a>
+        </td>
+      
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
