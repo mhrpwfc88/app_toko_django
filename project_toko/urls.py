@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app_toko.views import home, kategori ,del_kategori, add_kategori, edit_kategori
+from app_toko.views import home, kategori ,del_kategori, add_kategori, edit_kategori, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +25,5 @@ urlpatterns = [
     path('kategori/del/<int:k_id>', del_kategori, name='del_kategori'),
     path('kategori/form', add_kategori, name='add_kategori'),
     path('kategori/edit/<int:k_id>', edit_kategori, name='edit_kategori'),
+    path('login/', login, name='login'),
 ]
