@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+<<<<<<< HEAD
 from app_toko.views import home, kategori ,del_kategori, add_kategori, edit_kategori, user_login, user_logout
+=======
+from app_toko.views import home, kategori ,del_kategori, add_kategori, edit_kategori, login
+>>>>>>> 7e7f4762ce18c0a4d5404da374cc7483f099ebb3
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,6 +29,10 @@ urlpatterns = [
     path('kategori/del/<int:k_id>', del_kategori, name='del_kategori'),
     path('kategori/form', add_kategori, name='add_kategori'),
     path('kategori/edit/<int:k_id>', edit_kategori, name='edit_kategori'),
+<<<<<<< HEAD
     path('login/', user_login, name='login'),
     path('logout/', user_logout, name='logout'),
+=======
+    path('login/', login, name='login'),
+>>>>>>> 7e7f4762ce18c0a4d5404da374cc7483f099ebb3
 ]
